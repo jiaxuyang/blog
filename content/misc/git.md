@@ -5,6 +5,17 @@ draft: true
 ---
 
 # Git
+## Account
+1. 设置项目级别账户
+   ```
+   git config user.name "jiaxuyang"
+   git config user.email "xy.jia@aliyun.com"
+   ```
+2. 记住密码
+   ```
+   git config --global credential.helper store
+   ```
+   设了这条命令后下次输入的credentials会被存储下来
 ## Submodule
 1. git clone 拉取 submodules
    ```
