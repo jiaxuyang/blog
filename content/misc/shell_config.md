@@ -5,8 +5,9 @@ date: 2020-09-20T21:18:39+08:00
 # Mac
 - Zsh
   1. 查看已安装的shells：cat /etc/shells
-  2. 安装zsh：brew install zsh
-  3. 设置默认shell：chsh -s /bin/zsh
+  2. 查看当前使用的shell: `echo $SHELL`
+  3. 安装zsh：brew install zsh
+  4. 设置默认shell：chsh -s /bin/zsh
 - iterm2
 - oh-my-zsh
   1. zsh-syntax-highlighting
