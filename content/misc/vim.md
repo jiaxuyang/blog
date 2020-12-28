@@ -19,42 +19,42 @@ draft: true
    2. 下面是一份我在使用的 neovim 配置：
       ```vimrc
       """""""""""""""""""""""""""""""""""""""""
-" provide hjkl movements in Insert mode
-" provide hjkl movements in ex mode
-"""""""""""""""""""""""""""""""""""
-noremap! <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <A-BS> <C-\><C-o>db
-noremap! <C-f>  <Right>
-"cnoremap <A-f> <C-f>
-cnoremap ƒ <C-f>
-noremap! <C-b>  <Left>
-inoremap <C-d> <DEL>
-inoremap <C-k>  <C-o>D
-nnoremap <C-k>  D
-"nnoremap <D-a> a
+      " provide hjkl movements in Insert mode
+      " provide hjkl movements in ex mode
+      """""""""""""""""""""""""""""""""""
+      noremap! <C-a> <Home>
+      inoremap <C-e> <End>
+      inoremap <A-BS> <C-\><C-o>db
+      noremap! <C-f>  <Right>
+      "cnoremap <A-f> <C-f>
+      cnoremap ƒ <C-f>
+      noremap! <C-b>  <Left>
+      inoremap <C-d> <DEL>
+      inoremap <C-k>  <C-o>D
+      nnoremap <C-k>  D
+      "nnoremap <D-a> a
 
-""""""""""""""""""
-" config iTerm2 keys: Esc+Ac, Esc+As, Esc+Aa
-" close & write & clipboard copy paste
-"""""""""""""""""""""
-" Quit
-nnoremap <C-q> :qa<CR>
-" Copy
-vnoremap <M-A>c "+y
-" Save
-nnoremap <M-A>s :up<CR>
-inoremap <M-A>s <C-o>:up<CR>
-" Select whole content
-nnoremap <M-A>a ggVG
-" Paste
-nnoremap \p "+p
+      """"""""""""""""""
+      " config iTerm2 keys: Esc+Ac, Esc+As, Esc+Aa
+      " close & write & clipboard copy paste
+      """""""""""""""""""""
+      " Quit
+      nnoremap <C-q> :qa<CR>
+      " Copy
+      vnoremap <M-A>c "+y
+      " Save
+      nnoremap <M-A>s :up<CR>
+      inoremap <M-A>s <C-o>:up<CR>
+      " Select whole content
+      nnoremap <M-A>a ggVG
+      " Paste
+      nnoremap \p "+p
 
-"open
-:au BufReadPost *
-	 \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' 
-	 \ |   exe "normal! g`\""
-	 \ | endif
+      "open
+      :au BufReadPost *
+         \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' 
+         \ |   exe "normal! g`\""
+         \ | endif
       ```
 ## 列编辑
   - Ctrl + v column mode edit command.
