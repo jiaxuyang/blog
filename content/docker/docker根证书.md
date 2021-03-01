@@ -1,0 +1,3 @@
+证书问题
+直接安装：RUN apk --no-cache add ca-certificates
+也可以从之前的stage复制：COPY --from=build-env /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
