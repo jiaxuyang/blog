@@ -29,3 +29,51 @@ var so chan<- int = ch
 
 ## Select
 等待多个通信操作，直到其中一个可以执行。如果有多个操作可以执行，**随机**执行一个。[playground示例](https://play.golang.org/p/lErRHUQf5aq)
+
+## Goroutine 泄露
+```golang
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	go func() {
+		queue := make(chan string, 2)
+		queue <- "one"
+		queue <- "two"
+		close(queue)
+		// defer close(queue)
+
+		for elem := range queue {
+			fmt.Println(elem)
+		}
+		fmt.Println("goroutine退出")
+	}()
+	time.Sleep(time.Second * 3)
+}
+
+```
+
+## 死锁
+```golang
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+     queue := make(chan string, 2)
+     queue <- "one"
+     queue <- "two"
+     close(queue)
+     // defer close(queue)
+
+     for elem := range queue {
+         fmt.Println(elem)
+     }
+}
+```
