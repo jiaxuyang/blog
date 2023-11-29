@@ -77,3 +77,12 @@ gh is the equivalent of hovering the mouse over where the cursor is. Super handy
 g* g# 包含查找
 / 重复之前的查找
 ```
+## 替换
+```
+:%s/ +/<Ctrl-V><Enter>/g 替换全文的空格为换行
+拆分解释：
+% 代表全文
+s 代表substitute
+替换str中的换行不能用 \n, 应该用<CR>（按键：<Ctrl-V><Enter>)，因为\n代表了<NUL>字符
+g 代表全局匹配
+```
