@@ -9,4 +9,7 @@
 9. mac install oh-my-zsh
 10. 安装oh-my-zsh 插件：zsh-autosuggestions，zsh-syntax-highlighting
 11. 搜索fzf
-12. 
+12. 安装neovim：brew install neovim 见vim.md
+13. 安装goland，设置里开启配置同步
+14. 配置~/.gitconfig
+15. 配置~/.ssh/config
