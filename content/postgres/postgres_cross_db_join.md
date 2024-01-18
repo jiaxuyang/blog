@@ -1,3 +1,8 @@
+---
+title: "Postgres跨数据库Join查询"
+date: 2024-01-18T20:30:00+08:00
+---
+
 1.添加 postgres_fdw 扩展
 postgres_fdw: postgres foreign data wrapper
 
