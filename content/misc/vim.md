@@ -1,7 +1,6 @@
 ---
-title: "Vim"
+title: "vim"
 date: 2020-10-03T20:54:11+08:00
-draft: true
 ---
 
 # Vim

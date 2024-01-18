@@ -1,3 +1,8 @@
+---
+title: "mac from scratch"
+date: 2024-01-18T20:30:00+08:00
+---
+
 1. 下载安装键盘映射工具：karabiner-elements
 2. 配置caps_lock <=> left_control
 3. 登录chrome（下面用到的密码这里都有）

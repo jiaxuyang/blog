@@ -1,3 +1,7 @@
+---
+title: "短变量声明"
+date: 2024-01-18T20:30:00+08:00
+---
 都已声明：
 
 https://play.golang.org/p/GaPtiEn7yTL

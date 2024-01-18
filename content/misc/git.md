@@ -1,7 +1,7 @@
 ---
-title: "Git"
+title: "git"
 date: 2020-09-21T15:08:17+08:00
-draft: true
+draft: false
 ---
 
 # Git

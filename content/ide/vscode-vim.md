@@ -1,3 +1,7 @@
+---
+title: "vscode vim"
+date: 2024-01-18T20:30:00+08:00
+---
 vim	鼠标
 gd	Ctrl + Left Click
 gh	hover

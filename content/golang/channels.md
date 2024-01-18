@@ -1,7 +1,6 @@
 ---
-title: "Channels"
+title: "channels"
 date: 2020-09-21T14:49:06+08:00
-draft: true
 ---
 
 # Channels

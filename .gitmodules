@@ -1,10 +1,10 @@
 [submodule "themes/ananke"]
 	path = themes/ananke
-	url = https://github.com/budparr/gohugo-theme-ananke.git
+	url = git@github.com:budparr/gohugo-theme-ananke.git
 [submodule "themes/hugo-octopress"]
 	path = themes/hugo-octopress
-	url = https://github.com/parsiya/hugo-octopress.git
+	url = git@github.com:parsiya/hugo-octopress.git
 [submodule "public"]
 	path = public
-	url = https://github.com/jiaxuyang/jiaxuyang.github.io.git
+	url = git@github.com:jiaxuyang/jiaxuyang.github.io.git
 	branch = master
