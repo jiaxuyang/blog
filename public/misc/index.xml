@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscs on Xuyang&#39;s Blog</title>
+    <link>https://jiaxuyang.github.io/misc/</link>
+    <description>Recent content in Miscs on Xuyang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Jan 2024 20:30:00 +0800</lastBuildDate>
+    <atom:link href="https://jiaxuyang.github.io/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mac from scratch</title>
+      <link>https://jiaxuyang.github.io/misc/mac_from_scratch/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/mac_from_scratch/</guid>
+      <description> 下载安装键盘映射工具：karabiner-elements 配置caps_lock &amp;lt;=&amp;gt; left_control 登录chrome（下面用到的密码这里都有） 下载安装搜狗输入法，登录账号：jxytype@sogou.com 登录apple 下载iterm2 搜索mac install brew，一键安装 切换默认shell 见shell_config.md mac install oh-my-zsh 安装oh-my-zsh 插件：zsh-autosuggestions，zsh-syntax-highlighting 搜索fzf 安装neovim：brew install neovim 见vim.md 安装goland，设置里开启配置同步 配置~/.gitconfig 配置~/.ssh/config </description>
+    </item>
+    <item>
+      <title>mac install windows</title>
+      <link>https://jiaxuyang.github.io/misc/mac_install_windows/</link>
+      <pubDate>Tue, 10 Nov 2020 11:52:44 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/mac_install_windows/</guid>
+      <description> 下载安装 vmware fusion https://www.vmware.com/products/fusion.html 获取 personal key，https://my.vmware.com/group/vmware/evalcenter?p=fusion-player-personal 下载 windows10 镜像 https://www.microsoft.com/zh-hk/software-download/windows10ISO 打开虚拟机如果遇到报错，可以确认设置里的安全与隐私选项是否都已允许，然后重启vmware。 </description>
+    </item>
+    <item>
+      <title>vim</title>
+      <link>https://jiaxuyang.github.io/misc/vim/</link>
+      <pubDate>Sat, 03 Oct 2020 20:54:11 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/vim/</guid>
+      <description>Vim NeoVim 安装 brew install neovim 替代vim命令 alias vim=nvim 配置 默认的配置路径是 ~/.config/nvim/init.vim 下面是一份我在使用的 neovim 配置： &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; &amp;#34; provide hjkl movements in Insert mode &amp;#34; provide hjkl movements in ex mode &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; noremap! &amp;lt;C-a&amp;gt; &amp;lt;Home&amp;gt; inoremap &amp;lt;C-e&amp;gt; &amp;lt;End&amp;gt; inoremap &amp;lt;A-BS&amp;gt; &amp;lt;C-\&amp;gt;&amp;lt;C-o&amp;gt;db noremap! &amp;lt;C-f&amp;gt; &amp;lt;Right&amp;gt; &amp;#34;cnoremap &amp;lt;A-f&amp;gt; &amp;lt;C-f&amp;gt; cnoremap ƒ &amp;lt;C-f&amp;gt; noremap! &amp;lt;C-b&amp;gt; &amp;lt;Left&amp;gt; inoremap &amp;lt;C-d&amp;gt; &amp;lt;DEL&amp;gt; inoremap &amp;lt;C-k&amp;gt; &amp;lt;C-o&amp;gt;D nnoremap &amp;lt;C-k&amp;gt; D &amp;#34;nnoremap &amp;lt;D-a&amp;gt; a &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; &amp;#34; config iTerm2 keys: Esc+Ac, Esc+As, Esc+Aa &amp;#34; close &amp;amp; write &amp;amp; clipboard copy paste &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; &amp;#34; Quit nnoremap &amp;lt;C-q&amp;gt; :qa&amp;lt;CR&amp;gt; &amp;#34; Copy vnoremap &amp;lt;M-A&amp;gt;c &amp;#34;+y &amp;#34; Save nnoremap &amp;lt;M-A&amp;gt;s :up&amp;lt;CR&amp;gt; inoremap &amp;lt;M-A&amp;gt;s &amp;lt;C-o&amp;gt;:up&amp;lt;CR&amp;gt; &amp;#34; Select whole content nnoremap &amp;lt;M-A&amp;gt;a ggVG &amp;#34; Paste nnoremap \p &amp;#34;+p &amp;#34;open :au BufReadPost * \ if line(&amp;#34;&amp;#39;\&amp;#34;&amp;#34;) &amp;gt; 1 &amp;amp;&amp;amp; line(&amp;#34;&amp;#39;\&amp;#34;&amp;#34;) &amp;lt;= line(&amp;#34;$&amp;#34;) &amp;amp;&amp;amp; &amp;amp;ft !</description>
+    </item>
+    <item>
+      <title>git</title>
+      <link>https://jiaxuyang.github.io/misc/git/</link>
+      <pubDate>Mon, 21 Sep 2020 15:08:17 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/git/</guid>
+      <description>Git Account 设置项目级别账户 git config user.name &amp;#34;jiaxuyang&amp;#34; git config user.email &amp;#34;xy.jia@aliyun.com&amp;#34; 记住密码 git config --global credential.helper store 设了这条命令后下次输入的credentials会被存储下来 Basis 以下命令展示了一个完整的创建分支并提交改动的使用场景。
+# 从当前本地repo创建新的本地分支 feature/foo，会保留当前所有已提交未提交的改动。 git checkout -b feature/foo # 添加所有改动到 commit stage. git add . # 提交改动。会自动打开默认编辑器来编辑 commit message. git commit # [可选]添加新的 remote。默认的remote是origin，如果需要提交到其它repo，需要新建remote. git remote add jiaxuyang https://github.com/jiaxuyang/blog.git # 推送改动到git服务器。 git push --set-upstream origin feature/foo git push --set-upstream jiaxuyang feature/foo 以下命令展示从远程分支合并到本地分支。
+# 获取 remote 最新状态 git fetch # 或者 git pull # 合并到本地，一定要加 remote 名称前缀，否则会从本地分支合并。 git merge origin/dev # 如果有冲突，可以用 vscode 或 jetbrains 等 IDE 可视化解决，解决后 commit.</description>
+    </item>
+    <item>
+      <title>shell config</title>
+      <link>https://jiaxuyang.github.io/misc/shell_config/</link>
+      <pubDate>Sun, 20 Sep 2020 21:18:39 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/shell_config/</guid>
+      <description>Mac Zsh 查看已安装的shells：cat /etc/shells 查看当前使用的shell: echo $SHELL 安装zsh：brew install zsh 设置默认shell：chsh -s /bin/zsh iterm2 oh-my-zsh zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting autojump brew install autojump j &amp;ndash;purge zsh-autosuggestions git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions Ubuntu Zsh 查看已安装的shells：cat /etc/shells 安装zsh：brew install zsh 设置默认shell：chsh -s /bin/zsh oh-my-zsh zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting autojump brew install autojump j &amp;ndash;purge zsh-autosuggestions git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions </description>
+    </item>
+    <item>
+      <title>vscode</title>
+      <link>https://jiaxuyang.github.io/misc/vscode_extensions/</link>
+      <pubDate>Sun, 20 Sep 2020 21:18:39 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/vscode_extensions/</guid>
+      <description>Cloud Sync 设置 token vscode命令 sync advanced options 编辑文件 Ubuntu: $HOME/.config/Code/User/syncLocalSettings.json Mac: $HOME/Library/Application\ Support/Code/User/syncLocalSettings.json </description>
+    </item>
+  </channel>
+</rss>

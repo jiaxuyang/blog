@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xuyang&#39;s Blog</title>
+    <link>https://jiaxuyang.github.io/</link>
+    <description>Recent content on Xuyang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Jan 2024 20:30:00 +0800</lastBuildDate>
+    <atom:link href="https://jiaxuyang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>code style</title>
+      <link>https://jiaxuyang.github.io/golang/code_style/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/code_style/</guid>
+      <description>Golang代码规范 项目结构 参考：https://github.com/golang-standards/project-layout</description>
+    </item>
+    <item>
+      <title>mac from scratch</title>
+      <link>https://jiaxuyang.github.io/misc/mac_from_scratch/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/mac_from_scratch/</guid>
+      <description> 下载安装键盘映射工具：karabiner-elements 配置caps_lock &amp;lt;=&amp;gt; left_control 登录chrome（下面用到的密码这里都有） 下载安装搜狗输入法，登录账号：jxytype@sogou.com 登录apple 下载iterm2 搜索mac install brew，一键安装 切换默认shell 见shell_config.md mac install oh-my-zsh 安装oh-my-zsh 插件：zsh-autosuggestions，zsh-syntax-highlighting 搜索fzf 安装neovim：brew install neovim 见vim.md 安装goland，设置里开启配置同步 配置~/.gitconfig 配置~/.ssh/config </description>
+    </item>
+    <item>
+      <title>Postgres跨数据库Join查询</title>
+      <link>https://jiaxuyang.github.io/postgres/postgres_cross_db_join/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/postgres/postgres_cross_db_join/</guid>
+      <description>1.添加 postgres_fdw 扩展 postgres_fdw: postgres foreign data wrapper
+CREATE EXTENSION postgres_fdw;
+2.创建server
+CREATE SERVER example_server_name FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host &amp;rsquo;localhost&amp;rsquo;, dbname &amp;lsquo;dbname&amp;rsquo;, port &amp;lsquo;5432&amp;rsquo;); 3.创建user mapping
+CREATE USER MAPPING FOR example_user_name SERVER example_server_name OPTIONS (user &amp;lsquo;&amp;rsquo;, password &amp;lsquo;&amp;rsquo;); 4.引入外部表
+IMPORT FOREIGN SCHEMA public LIMIT TO (example_table_name) FROM SERVER example_server_name INTO public;</description>
+    </item>
+    <item>
+      <title>vscode vim</title>
+      <link>https://jiaxuyang.github.io/ide/vscode-vim/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/ide/vscode-vim/</guid>
+      <description>vim	鼠标 gd	Ctrl + Left Click gh	hover af	Visual mode, 选择更大的块，引号，括号etc gb	在下一个与当前光标字符相同的字符处，添加一个光标 gq	格式化文档类注释 删除所有匹配所在的行： :g/Rwc_quat/d https://vim.fandom.com/wiki/Power_of_g</description>
+    </item>
+    <item>
+      <title>一些思考</title>
+      <link>https://jiaxuyang.github.io/golang/thoughts/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/thoughts/</guid>
+      <description> 嵌入与指定字段的区别 因为golang使用字段名开头字母大小写来区分私有或公开，嵌入（匿名）字段将依赖于所属类型的访问级别。 len cap 都可以用在哪些类型 rune和int32有区别吗 </description>
+    </item>
+    <item>
+      <title>并行执行池</title>
+      <link>https://jiaxuyang.github.io/golang/parallel_execution_pool/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/parallel_execution_pool/</guid>
+      <description>前言 并行 后端服务开发中，经常需要执行批处理任务。比如调用某服务的 HTTP 接口时，服务没有与此接口对应的批处理接口，对一批数据并行处理，将得到相比顺序处理成百上千倍的效率提升（取决于服务的并发性能）。
+限制并行度 程序的并行度过高，无限制的并行不可取。在实际应用中，调用方或被调用方会存在资源限制，例如 CPU 核数，磁盘IO，网络等瓶颈，如果不对并发数做限制，程序可能出现不可预料的错误。
+Go 程 我们知道，GO 语言本身是为多核架构而设计的，使用 go 关键字就可以很方便地实现任意语句的异步执行。
+f() // 等待函数f返回 go f() // 在新的Go程中执行，无等待 Goroutine 结合 Channel（通道） 可以很方便的实现并行。
+闭包 A closure is a function value that references variables from outside its body.
+闭包是引用了它外部的变量的方法。
+在 GO 语言中，函数是一等公民。而闭包作为一种特殊的函数，同时也被很多其它语言所实现，将给我们的并行实现带来很大的便利。
+抽象 前面提到，GO 语言本身已经可以很方便的写并行代码了，但是对 Channel 的操作以及对并行度的限制依旧是较为繁琐的操作，因此我们可以对这类问题抽象出公共库，隐藏细节方便复用。并行执行池是一簇有最大并行度限制的任务执行器，我们可以不断向执行池添加任务，它将负责管理调度 Go 程来执行这些任务。
+实现 现有轮子 本着不重复实现的原则，我先在 Github 上调研类似的现有实现，搜索 golang parallel ，很惊喜的发现一个类似的项目 buptmiao/parallel，它的确可以很方便地并行执行批任务，同时它还实现了一个简单的 workflow，但是没有对并行度的限制，很遗憾，我们不能直接拿来使用。但是它对执行函数的注册，函数参数传入和返回值接口值得借鉴。
+具体来说，它用反射来获取函数的参数和返回值规格，用户可以传入任意签名的函数和任意数量的参数以及接收任意数量返回值，同时也对 panic 提供了接口来处理，可以满足批处理的大部分需求。同时也带来了缺点：
+用户学习曲线较陡。接口多，需要用户记忆很多的接口。 设计复杂。如何科学地设计这么多的接口，并且让接口表达准确、方便记忆是个有挑战的事，而接口是否科学本身也是很有争议的议题。 实现复杂。需要使用 Go 的反射库。 并行执行池 除了 reflect 方式的实现外，我们还可以通过闭包来实现。通过闭包可以打包一个函数以及它的参数和返回值，以闭包作为任务执行的最小单位。</description>
+    </item>
+    <item>
+      <title>短变量声明</title>
+      <link>https://jiaxuyang.github.io/golang/short_variable_statement/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/short_variable_statement/</guid>
+      <description>都已声明：
+https://play.golang.org/p/GaPtiEn7yTL
+其中一个已声明：
+https://play.golang.org/p/xQGl8kXyUsl
+https://play.golang.org/p/UujXGbQ9voY
+两个都未声明：
+https://play.golang.org/p/TczAQ81LbME
+在内层代码块中使用短变量声明，和外部变量同名的会覆盖外部变量。
+短变量声明本质上就是变量生明，没有什么特殊之处。即使左值有多个，也都是新变量声明。
+如果是在同一代码块里，短变量声明又是可以智能判断是否新声明变量，https://play.golang.org/p/S9ksXvyRTYS</description>
+    </item>
+    <item>
+      <title>mac install windows</title>
+      <link>https://jiaxuyang.github.io/misc/mac_install_windows/</link>
+      <pubDate>Tue, 10 Nov 2020 11:52:44 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/mac_install_windows/</guid>
+      <description> 下载安装 vmware fusion https://www.vmware.com/products/fusion.html 获取 personal key，https://my.vmware.com/group/vmware/evalcenter?p=fusion-player-personal 下载 windows10 镜像 https://www.microsoft.com/zh-hk/software-download/windows10ISO 打开虚拟机如果遇到报错，可以确认设置里的安全与隐私选项是否都已允许，然后重启vmware。 </description>
+    </item>
+    <item>
+      <title>vim</title>
+      <link>https://jiaxuyang.github.io/misc/vim/</link>
+      <pubDate>Sat, 03 Oct 2020 20:54:11 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/vim/</guid>
+      <description>Vim NeoVim 安装 brew install neovim 替代vim命令 alias vim=nvim 配置 默认的配置路径是 ~/.config/nvim/init.vim 下面是一份我在使用的 neovim 配置： &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; &amp;#34; provide hjkl movements in Insert mode &amp;#34; provide hjkl movements in ex mode &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; noremap! &amp;lt;C-a&amp;gt; &amp;lt;Home&amp;gt; inoremap &amp;lt;C-e&amp;gt; &amp;lt;End&amp;gt; inoremap &amp;lt;A-BS&amp;gt; &amp;lt;C-\&amp;gt;&amp;lt;C-o&amp;gt;db noremap! &amp;lt;C-f&amp;gt; &amp;lt;Right&amp;gt; &amp;#34;cnoremap &amp;lt;A-f&amp;gt; &amp;lt;C-f&amp;gt; cnoremap ƒ &amp;lt;C-f&amp;gt; noremap! &amp;lt;C-b&amp;gt; &amp;lt;Left&amp;gt; inoremap &amp;lt;C-d&amp;gt; &amp;lt;DEL&amp;gt; inoremap &amp;lt;C-k&amp;gt; &amp;lt;C-o&amp;gt;D nnoremap &amp;lt;C-k&amp;gt; D &amp;#34;nnoremap &amp;lt;D-a&amp;gt; a &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; &amp;#34; config iTerm2 keys: Esc+Ac, Esc+As, Esc+Aa &amp;#34; close &amp;amp; write &amp;amp; clipboard copy paste &amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; &amp;#34; Quit nnoremap &amp;lt;C-q&amp;gt; :qa&amp;lt;CR&amp;gt; &amp;#34; Copy vnoremap &amp;lt;M-A&amp;gt;c &amp;#34;+y &amp;#34; Save nnoremap &amp;lt;M-A&amp;gt;s :up&amp;lt;CR&amp;gt; inoremap &amp;lt;M-A&amp;gt;s &amp;lt;C-o&amp;gt;:up&amp;lt;CR&amp;gt; &amp;#34; Select whole content nnoremap &amp;lt;M-A&amp;gt;a ggVG &amp;#34; Paste nnoremap \p &amp;#34;+p &amp;#34;open :au BufReadPost * \ if line(&amp;#34;&amp;#39;\&amp;#34;&amp;#34;) &amp;gt; 1 &amp;amp;&amp;amp; line(&amp;#34;&amp;#39;\&amp;#34;&amp;#34;) &amp;lt;= line(&amp;#34;$&amp;#34;) &amp;amp;&amp;amp; &amp;amp;ft !</description>
+    </item>
+    <item>
+      <title>git</title>
+      <link>https://jiaxuyang.github.io/misc/git/</link>
+      <pubDate>Mon, 21 Sep 2020 15:08:17 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/git/</guid>
+      <description>Git Account 设置项目级别账户 git config user.name &amp;#34;jiaxuyang&amp;#34; git config user.email &amp;#34;xy.jia@aliyun.com&amp;#34; 记住密码 git config --global credential.helper store 设了这条命令后下次输入的credentials会被存储下来 Basis 以下命令展示了一个完整的创建分支并提交改动的使用场景。
+# 从当前本地repo创建新的本地分支 feature/foo，会保留当前所有已提交未提交的改动。 git checkout -b feature/foo # 添加所有改动到 commit stage. git add . # 提交改动。会自动打开默认编辑器来编辑 commit message. git commit # [可选]添加新的 remote。默认的remote是origin，如果需要提交到其它repo，需要新建remote. git remote add jiaxuyang https://github.com/jiaxuyang/blog.git # 推送改动到git服务器。 git push --set-upstream origin feature/foo git push --set-upstream jiaxuyang feature/foo 以下命令展示从远程分支合并到本地分支。
+# 获取 remote 最新状态 git fetch # 或者 git pull # 合并到本地，一定要加 remote 名称前缀，否则会从本地分支合并。 git merge origin/dev # 如果有冲突，可以用 vscode 或 jetbrains 等 IDE 可视化解决，解决后 commit.</description>
+    </item>
+    <item>
+      <title>channels</title>
+      <link>https://jiaxuyang.github.io/golang/channels/</link>
+      <pubDate>Mon, 21 Sep 2020 14:49:06 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/channels/</guid>
+      <description>Channels Send &amp;amp; Receive ch &amp;lt;- v // send v to channel ch. v := &amp;lt;- ch // receive from ch, assign value to v. Send-only &amp;amp; Receive-only channels ch := make(chan int, 1) var ro &amp;lt;-chan int = ch var so chan&amp;lt;- int = ch 只发送channel的接收操作或只接收channel的发送操作都会在报编译错误： ./prog.go:11:2: invalid operation: &amp;lt;-w (receive from send-only type chan&amp;lt;- int)
+Close channel Channel 不需要像 File 一样使用后需要关闭，所以一般情况下不需要 close，除非需要通知 range 停止对 channel 的读取。 只能在 send 端来关闭。对只接收 channel 进行 close 会报编译错误： .</description>
+    </item>
+    <item>
+      <title>docker根证书</title>
+      <link>https://jiaxuyang.github.io/docker/docker_root_cert/</link>
+      <pubDate>Mon, 21 Sep 2020 14:49:06 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/docker/docker_root_cert/</guid>
+      <description>证书问题 直接安装：RUN apk &amp;ndash;no-cache add ca-certificates 也可以从之前的stage复制：COPY &amp;ndash;from=build-env /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/</description>
+    </item>
+    <item>
+      <title>shell config</title>
+      <link>https://jiaxuyang.github.io/misc/shell_config/</link>
+      <pubDate>Sun, 20 Sep 2020 21:18:39 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/shell_config/</guid>
+      <description>Mac Zsh 查看已安装的shells：cat /etc/shells 查看当前使用的shell: echo $SHELL 安装zsh：brew install zsh 设置默认shell：chsh -s /bin/zsh iterm2 oh-my-zsh zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting autojump brew install autojump j &amp;ndash;purge zsh-autosuggestions git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions Ubuntu Zsh 查看已安装的shells：cat /etc/shells 安装zsh：brew install zsh 设置默认shell：chsh -s /bin/zsh oh-my-zsh zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting autojump brew install autojump j &amp;ndash;purge zsh-autosuggestions git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions </description>
+    </item>
+    <item>
+      <title>toefl</title>
+      <link>https://jiaxuyang.github.io/multilingual/toefl_20190801/</link>
+      <pubDate>Sun, 20 Sep 2020 21:18:39 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/multilingual/toefl_20190801/</guid>
+      <description>概述 托福总分120分，阅读、听力、口语、写作各占30分。
+托福在2019年8月1日改版，题量减少，平均考试时间从3.5小时缩短到3个小时。
+加试 理论上阅读和听力会随机加试一个section，加试部分不计入总分，但可能会作为题目难度的判断标准，以此对考生最终成绩作出调整。
+根据大家的实际经历，可以理解为加试一定会有，且只有一个，阅读或者听力。
+结构 阅读 时间：18min/passage, 总时间：54-72min 题量：10quesions/passage，3-4篇文章 建议： 客观：由于改革后细节题减少，更应该先通读段落。 主观：阅读速度受限，应该先读题目，或者先大概看一下每段首句。 听力 时间：41-57min 总时间：小 section 16 分钟，大 section 25分钟。 答题时间：小 section 6.5分钟，大 section 10分钟。 题量： 一个小 section，一个 大section，可能加试一个小 section 小section：conversation+lecture，5题+6题 大section：conversation+lecture+lecture，5题+6题+6题 建议： 听力不止在听力部分有，口语和写作都有考察听力的地方，所以听力很重要。 题目减少，每篇听力的平均播放时间减少。 口语 时间：17min 二选一题 准备15s，陈述45s 校园事务议论题 阅读40-45s，听力60-80s，准备30s，陈述60s 名词解释举例题 阅读40-45s，听力60-80s，准备30s，陈述60s 知识小结转述题 听力60-90s，准备20s，陈述60s 题量： 二选一题 除了二选一，也可以 it depends 校园事务议论题 名词解释举例题 知识小结转述题 评分： 专家+引擎 专家：同一个专家只会评一道题，避免不同题间的遗留印象。 引擎： 平均沉默时间 同意替换量 语速 发音和节奏 建议： 二选一题 口语黄金 80 题 独立作文185 题库 校园事务议论题 阅读的时候要注意记录主题和支撑的观点 听力的部分主要记清楚主要人物的观点，以及他支持或反对的理由 结构一定要清楚，要用计时软件，多锻炼几次才能在规定时间内把要点说全说清楚 名词解释举例题 知识小结转述题 参考：https://zhuanlan.</description>
+    </item>
+    <item>
+      <title>vscode</title>
+      <link>https://jiaxuyang.github.io/misc/vscode_extensions/</link>
+      <pubDate>Sun, 20 Sep 2020 21:18:39 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/misc/vscode_extensions/</guid>
+      <description>Cloud Sync 设置 token vscode命令 sync advanced options 编辑文件 Ubuntu: $HOME/.config/Code/User/syncLocalSettings.json Mac: $HOME/Library/Application\ Support/Code/User/syncLocalSettings.json </description>
+    </item>
+  </channel>
+</rss>

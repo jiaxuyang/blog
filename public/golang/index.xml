@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golangs on Xuyang&#39;s Blog</title>
+    <link>https://jiaxuyang.github.io/golang/</link>
+    <description>Recent content in Golangs on Xuyang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Jan 2024 20:30:00 +0800</lastBuildDate>
+    <atom:link href="https://jiaxuyang.github.io/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>code style</title>
+      <link>https://jiaxuyang.github.io/golang/code_style/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/code_style/</guid>
+      <description>Golang代码规范 项目结构 参考：https://github.com/golang-standards/project-layout</description>
+    </item>
+    <item>
+      <title>一些思考</title>
+      <link>https://jiaxuyang.github.io/golang/thoughts/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/thoughts/</guid>
+      <description> 嵌入与指定字段的区别 因为golang使用字段名开头字母大小写来区分私有或公开，嵌入（匿名）字段将依赖于所属类型的访问级别。 len cap 都可以用在哪些类型 rune和int32有区别吗 </description>
+    </item>
+    <item>
+      <title>并行执行池</title>
+      <link>https://jiaxuyang.github.io/golang/parallel_execution_pool/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/parallel_execution_pool/</guid>
+      <description>前言 并行 后端服务开发中，经常需要执行批处理任务。比如调用某服务的 HTTP 接口时，服务没有与此接口对应的批处理接口，对一批数据并行处理，将得到相比顺序处理成百上千倍的效率提升（取决于服务的并发性能）。
+限制并行度 程序的并行度过高，无限制的并行不可取。在实际应用中，调用方或被调用方会存在资源限制，例如 CPU 核数，磁盘IO，网络等瓶颈，如果不对并发数做限制，程序可能出现不可预料的错误。
+Go 程 我们知道，GO 语言本身是为多核架构而设计的，使用 go 关键字就可以很方便地实现任意语句的异步执行。
+f() // 等待函数f返回 go f() // 在新的Go程中执行，无等待 Goroutine 结合 Channel（通道） 可以很方便的实现并行。
+闭包 A closure is a function value that references variables from outside its body.
+闭包是引用了它外部的变量的方法。
+在 GO 语言中，函数是一等公民。而闭包作为一种特殊的函数，同时也被很多其它语言所实现，将给我们的并行实现带来很大的便利。
+抽象 前面提到，GO 语言本身已经可以很方便的写并行代码了，但是对 Channel 的操作以及对并行度的限制依旧是较为繁琐的操作，因此我们可以对这类问题抽象出公共库，隐藏细节方便复用。并行执行池是一簇有最大并行度限制的任务执行器，我们可以不断向执行池添加任务，它将负责管理调度 Go 程来执行这些任务。
+实现 现有轮子 本着不重复实现的原则，我先在 Github 上调研类似的现有实现，搜索 golang parallel ，很惊喜的发现一个类似的项目 buptmiao/parallel，它的确可以很方便地并行执行批任务，同时它还实现了一个简单的 workflow，但是没有对并行度的限制，很遗憾，我们不能直接拿来使用。但是它对执行函数的注册，函数参数传入和返回值接口值得借鉴。
+具体来说，它用反射来获取函数的参数和返回值规格，用户可以传入任意签名的函数和任意数量的参数以及接收任意数量返回值，同时也对 panic 提供了接口来处理，可以满足批处理的大部分需求。同时也带来了缺点：
+用户学习曲线较陡。接口多，需要用户记忆很多的接口。 设计复杂。如何科学地设计这么多的接口，并且让接口表达准确、方便记忆是个有挑战的事，而接口是否科学本身也是很有争议的议题。 实现复杂。需要使用 Go 的反射库。 并行执行池 除了 reflect 方式的实现外，我们还可以通过闭包来实现。通过闭包可以打包一个函数以及它的参数和返回值，以闭包作为任务执行的最小单位。</description>
+    </item>
+    <item>
+      <title>短变量声明</title>
+      <link>https://jiaxuyang.github.io/golang/short_variable_statement/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/short_variable_statement/</guid>
+      <description>都已声明：
+https://play.golang.org/p/GaPtiEn7yTL
+其中一个已声明：
+https://play.golang.org/p/xQGl8kXyUsl
+https://play.golang.org/p/UujXGbQ9voY
+两个都未声明：
+https://play.golang.org/p/TczAQ81LbME
+在内层代码块中使用短变量声明，和外部变量同名的会覆盖外部变量。
+短变量声明本质上就是变量生明，没有什么特殊之处。即使左值有多个，也都是新变量声明。
+如果是在同一代码块里，短变量声明又是可以智能判断是否新声明变量，https://play.golang.org/p/S9ksXvyRTYS</description>
+    </item>
+    <item>
+      <title>channels</title>
+      <link>https://jiaxuyang.github.io/golang/channels/</link>
+      <pubDate>Mon, 21 Sep 2020 14:49:06 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/golang/channels/</guid>
+      <description>Channels Send &amp;amp; Receive ch &amp;lt;- v // send v to channel ch. v := &amp;lt;- ch // receive from ch, assign value to v. Send-only &amp;amp; Receive-only channels ch := make(chan int, 1) var ro &amp;lt;-chan int = ch var so chan&amp;lt;- int = ch 只发送channel的接收操作或只接收channel的发送操作都会在报编译错误： ./prog.go:11:2: invalid operation: &amp;lt;-w (receive from send-only type chan&amp;lt;- int)
+Close channel Channel 不需要像 File 一样使用后需要关闭，所以一般情况下不需要 close，除非需要通知 range 停止对 channel 的读取。 只能在 send 端来关闭。对只接收 channel 进行 close 会报编译错误： .</description>
+    </item>
+  </channel>
+</rss>
