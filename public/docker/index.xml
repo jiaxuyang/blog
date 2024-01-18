@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dockers on Xuyang&#39;s Blog</title>
+    <link>https://jiaxuyang.github.io/docker/</link>
+    <description>Recent content in Dockers on Xuyang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 21 Sep 2020 14:49:06 +0800</lastBuildDate>
+    <atom:link href="https://jiaxuyang.github.io/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker根证书</title>
+      <link>https://jiaxuyang.github.io/docker/docker_root_cert/</link>
+      <pubDate>Mon, 21 Sep 2020 14:49:06 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/docker/docker_root_cert/</guid>
+      <description>证书问题 直接安装：RUN apk &amp;ndash;no-cache add ca-certificates 也可以从之前的stage复制：COPY &amp;ndash;from=build-env /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/</description>
+    </item>
+  </channel>
+</rss>

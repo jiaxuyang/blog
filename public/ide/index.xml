@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ides on Xuyang&#39;s Blog</title>
+    <link>https://jiaxuyang.github.io/ide/</link>
+    <description>Recent content in Ides on Xuyang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Jan 2024 20:30:00 +0800</lastBuildDate>
+    <atom:link href="https://jiaxuyang.github.io/ide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vscode vim</title>
+      <link>https://jiaxuyang.github.io/ide/vscode-vim/</link>
+      <pubDate>Thu, 18 Jan 2024 20:30:00 +0800</pubDate>
+      <guid>https://jiaxuyang.github.io/ide/vscode-vim/</guid>
+      <description>vim	鼠标 gd	Ctrl + Left Click gh	hover af	Visual mode, 选择更大的块，引号，括号etc gb	在下一个与当前光标字符相同的字符处，添加一个光标 gq	格式化文档类注释 删除所有匹配所在的行： :g/Rwc_quat/d https://vim.fandom.com/wiki/Power_of_g</description>
+    </item>
+  </channel>
+</rss>
