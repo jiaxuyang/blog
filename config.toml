@@ -1,4 +1,4 @@
-baseURL = "https://jiaxuyang.github.io/"
+baseURL = "https://jiaxuyang.github.io/blog/"
 languageCode = "zh-cn"
 title = "Xuyang's Blog"
 # theme = "ananke"
