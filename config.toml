@@ -2,7 +2,8 @@ baseURL = "https://jiaxuyang.github.io/blog/"
 languageCode = "zh-cn"
 title = "Xuyang's Blog"
 # theme = "ananke"
-theme = "hugo-octopress"
+# theme = "hugo-octopress"
+theme = "dream"
 # Disqus shortcode
 # Disable comments for any individual post by adding "comments: false" in its frontmatter
 disqusShortname = "Your disqus shortname"
