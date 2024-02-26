@@ -1,4 +1,5 @@
 baseURL = "https://jiaxuyang.github.io/blog/"
+canonifyURLs = true
 languageCode = "zh-cn"
 title = "Xuyang's Blog"
 # theme = "ananke"
