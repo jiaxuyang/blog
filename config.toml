@@ -8,6 +8,9 @@ theme = "hugo-theme-dream"
 # Disqus shortcode
 # Disable comments for any individual post by adding "comments: false" in its frontmatter
 disqusShortname = "Your disqus shortname"
+enableRobotsTXT = true # 详见 Dream 作者 docs 目录下文档
+enableEmoji = true
+hasCJKLanguage = true
 
 # Number of blog posts in each pagination page
 paginate = 6
@@ -79,6 +82,7 @@ post = "/blog/:year-:month-:day-:title/"
   # This text appears in site header under website title
   subtitle = "“Get busy living or get busy dying.” — Andy Dufresne"
   headerTitle = "Learning - Living - Chasing"
+  motto = "早"
 
   # Search engine URL
   searchEngineURL = "https://www.google.com/search"
