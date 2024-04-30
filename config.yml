@@ -1,5 +1,5 @@
 baseURL: "https://jiaxuyang.github.io/blog/"
-title: Xuyang's Blog
+title: JXY Blog
 paginate: 5
 theme: PaperMod
 
@@ -14,10 +14,10 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Xuyang's Blog
+  title: JXY Blog
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: Xu-Yang Jia
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -57,7 +57,7 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: Xuyang's Blog
+    title: JXY Blog
     subtitle: "Learning - Living - Chasing"
     imageUrl: "<img location>"
     imageWidth: 120
