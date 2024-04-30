@@ -1,5 +1,5 @@
 ---
-title: "Golang 开发"
+title: "Golang dev"
 date: 2024-04-30T00:00:00+08:00
 categories: 
   - MeansOfProduction

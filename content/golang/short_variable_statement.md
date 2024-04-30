@@ -1,5 +1,5 @@
 ---
-title: "短变量声明"
+title: "short variable statement"
 date: 2024-01-18T20:30:00+08:00
 ---
 都已声明：

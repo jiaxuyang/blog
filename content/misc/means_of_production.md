@@ -1,5 +1,5 @@
 ---
-title: "生产资料——长工与佃农的区别"
+title: "means of production, difference between 长工 and 佃农"
 date: 2024-04-30T00:00:00+08:00
 categories: 
   - MeansOfProduction

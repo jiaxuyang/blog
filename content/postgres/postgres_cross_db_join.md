@@ -1,5 +1,5 @@
 ---
-title: "Postgres跨数据库Join查询"
+title: "postgres join cross database"
 date: 2024-01-18T20:30:00+08:00
 ---
 

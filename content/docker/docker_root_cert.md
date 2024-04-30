@@ -1,5 +1,5 @@
 ---
-title: "docker根证书"
+title: "docker root certification"
 date: 2020-09-21T14:49:06+08:00
 ---
 证书问题

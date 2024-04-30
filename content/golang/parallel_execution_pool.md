@@ -1,5 +1,5 @@
 ---
-title: "并行执行池"
+title: "parallel execution pool"
 date: 2024-01-18T20:30:00+08:00
 ---
 ## 前言
