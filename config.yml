@@ -7,6 +7,9 @@ enableRobotsTXT: true
 buildDrafts: true
 buildFuture: true
 buildExpired: true
+enableInlineShortcodes: true
+enableEmoji: true
+mainsections: ["dockers", "golang", "ide", "misc", "multilingual", "postgres"]
 
 minify:
   disableXML: true
