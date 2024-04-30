@@ -13,7 +13,7 @@ enableEmoji = true
 hasCJKLanguage = true
 
 # Number of blog posts in each pagination page
-paginate = 6
+paginate = 20
 
 [permalinks]
 # Configures post URLs
@@ -130,3 +130,5 @@ post = "/blog/:year-:month-:day-:title/"
 
   # Set to true to enable compact index. Set to false or remove to go back to classic view.
   compactIndex = true
+  maxTags = 0
+  categoriesLimitInHeader = 0 # deprecated
