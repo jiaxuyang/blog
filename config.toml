@@ -78,6 +78,7 @@ post = "/blog/:year-:month-:day-:title/"
 
   # This text appears in site header under website title
   subtitle = "“Get busy living or get busy dying.” — Andy Dufresne"
+  headerTitle = "Learning - Living - Chasing"
 
   # Search engine URL
   searchEngineURL = "https://www.google.com/search"
