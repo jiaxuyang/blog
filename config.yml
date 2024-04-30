@@ -59,7 +59,7 @@ params:
     enabled: false # needs to be explicitly set
     title: JXY Blog
     subtitle: "Learning - Living - Chasing"
-    imageUrl: "<img location>"
+    imageUrl: "img/zhujiajiao_night.jpg"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
