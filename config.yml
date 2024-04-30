@@ -62,19 +62,22 @@ params:
     imageUrl: "images/zhujiajiao_night.jpg"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: my image
+    imageTitle: 朱家角古镇夜晚
     buttons:
       - name: Posts
-        url: posts
+        url: /
       - name: Tags
-        url: tags
+        url: /
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Learning - Living - Chasing
+    Title: "Learning - Living - Chasing"
+    Content: >
+      👋 Welcome to JXY blog!
+      - I'm a software development engineer based in Hangzhou, China.
+      - The next thing is AI!
 
-#  socialIcons:
+  #  socialIcons:
 #    - name: x
 #      url: "https://x.com/"
 #    - name: stackoverflow
