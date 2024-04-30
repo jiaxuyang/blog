@@ -15,7 +15,7 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: JXY Blog
-  description: "ExampleSite description"
+  description: "JXY Blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Xu-Yang Jia
   # author: ["Me", "You"] # multiple authors
@@ -74,13 +74,13 @@ params:
     Title: "Hi there \U0001F44B"
     Content: Welcome to my blog
 
-  socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
-    - name: github
-      url: "https://github.com/"
+#  socialIcons:
+#    - name: x
+#      url: "https://x.com/"
+#    - name: stackoverflow
+#      url: "https://stackoverflow.com"
+#    - name: github
+#      url: "https://github.com/"
 
   analytics:
     google:
@@ -96,7 +96,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/jiaxuyang/blog/blob/master/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
