@@ -1,134 +1,137 @@
-baseURL = "https://jiaxuyang.github.io/blog/"
-canonifyURLs = true
-languageCode = "zh-cn"
-title = "Xuyang's Blog"
-# theme = "ananke"
-# theme = "hugo-octopress"
-theme = "hugo-theme-dream"
-# Disqus shortcode
-# Disable comments for any individual post by adding "comments: false" in its frontmatter
-disqusShortname = "Your disqus shortname"
-enableRobotsTXT = true # 详见 Dream 作者 docs 目录下文档
-enableEmoji = true
-hasCJKLanguage = true
+baseURL: "https://jiaxuyang.github.io/blog/"
+title: Xuyang's Blog
+paginate: 5
+theme: PaperMod
 
-# Number of blog posts in each pagination page
-paginate = 20
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
 
-[permalinks]
-# Configures post URLs
-post = "/blog/:year-:month-:day-:title/"
+minify:
+  disableXML: true
+  minifyOutput: true
 
-[[menu.main]]
-  Name = "Blog"
-  URL = "/"
-  weight = -10
-[[menu.main]]
-  Name = "Tags"
-  URL = "/tags/"
-  weight = -5
-[[menu.main]]
-  Name = "Categories"
-  URL = "/categories/"
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Xuyang's Blog
+  description: "ExampleSite description"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: Me
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
 
-[[menu.sidebar]]
-  Name = "golang"
-  URL = "/golang/"
-  weight = 0
-[[menu.sidebar]]
-  Name = "multilingual"
-  URL = "/multilingual/"
-  weight = 1
-[[menu.sidebar]]
-  Name = "misc"
-  URL = "/misc/"
-  weight = 1
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
 
-[params]
-  mainSections = ["golang", "multilingual", "misc"]
-  generateTaxonomyList = true
-  sidebarMenuEnabled = true
-  sidebarMenuHeader = "Collections"
-  tableOfContents = true
-#   sidebarHeader = "Sidebar Header"
-#   sidebarText = """Here's a [link to google](https://www.google.com)
-# </br>
-# Second line
-# </br>
-# Third line
-# This line has two spaces in the end to create a new line using markdown[two spaces here]  
-# Forth line
-# """
-  sidebarRecentLimit = 5
-  github = "https://github.com/jiaxuyang/"
-  bitbucket = ""
-  gitlab = ""
-  twitter = ""
-  keybase = ""
-  linkedin = ""
-  stackoverflow = ""
-  googleplus = ""
-  youtube = ""
-  facebook = ""
-  instagram = ""
-  bitcoin = ""
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "<link / abs url>"
+    favicon16x16: "<link / abs url>"
+    favicon32x32: "<link / abs url>"
+    apple_touch_icon: "<link / abs url>"
+    safari_pinned_tab: "<link / abs url>"
 
-  # If false, all contents of posts will appear on the front page and in pagination
-  truncate = true
+  label:
+    text: "Home"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
 
-  # Author's name (appears in meta tags and under posts)
-  author = "Xuyang"
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: Xuyang's Blog
+    subtitle: "Learning - Living - Chasing"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
 
-  # This text appears in site header under website title
-  subtitle = "“Get busy living or get busy dying.” — Andy Dufresne"
-  headerTitle = "Learning - Living - Chasing"
-  motto = "早"
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
 
-  # Search engine URL
-  searchEngineURL = "https://www.google.com/search"
+  socialIcons:
+    - name: x
+      url: "https://x.com/"
+    - name: stackoverflow
+      url: "https://stackoverflow.com"
+    - name: github
+      url: "https://github.com/"
 
-  # Text of the "Continue Reading" label. Supports markdown and inline HTML.
-  # For example, &rarr; == right arrow.
-  continueReadingText = "Would you like to know more? &rarr;"
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
 
-  # Google analytics code - remove if you do not have/want Google Analytics - needs JavaScript
-  googleAnalytics = "UA-XXXXX-X"
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
 
-  # Optional piwik tracking
-  #[params.analytics.piwik]
-  #  URL = "https://stats.example.com"
-  #  ID = "42"
+  editPost:
+    URL: "https://github.com/<path_to_repo>/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
 
-  # Switch to true to enable RSS icon link
-  rss = true
-
-  # Set to true to use a text label for RSS instead of an icon
-  # This is overwritten by the "rss" setting
-  textrss = false
-
-  # Website's default description
-  description = ""
-
-  # Populate with your search keywords - these will appear in meta tags
-  # defaultKeywords = ["keyword1" , "keyword2" , "keyword3" , "keyword4"]
-
-  # Set to true to hide ReadingTime on posts
-  disableReadingTime = false
-
-  # Set to true to disable downloading of remote Google fonts
-  disableGoogleFonts = false
-
-  # Remove or set to false to use local fonts
-  remoteFonts = false
-
-  # Remove or set to false to use FontAwesome CDN, otherwise, the theme uses ForkAwesome local fonts.
-  # fontAwesome = false
-
-  # If set to true, navigation menu links will open in a new window with the exception of links to root ("/")
-  # If this item does not exist or is set to false, then navigation menu links will open in the same window
-  navigationNewWindow = true
-
-  # Set to true to enable compact index. Set to false or remove to go back to classic view.
-  compactIndex = true
-  maxTags = 0
-  categoriesLimitInHeader = 0 # deprecated
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: example
+      name: example.org
+      url: https://example.org
+      weight: 30
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
