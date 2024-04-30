@@ -9,13 +9,19 @@ buildFuture: true
 buildExpired: true
 enableInlineShortcodes: true
 enableEmoji: true
-mainsections: ["dockers", "golang", "ide", "misc", "multilingual", "postgres"]
 
 minify:
   disableXML: true
   minifyOutput: true
 
 params:
+  mainSections:
+    - dockers
+    - golang
+    - ide
+    - misc
+    - multilingual
+    - postgres
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: JXY Blog
   description: "JXY Blog"
