@@ -73,3 +73,5 @@ git push
 ```bash
 git commit --amend --author="jiaxuyang <xy.jia@aliyun.com>"
 ```
+## Rewrite History Commit
+修改历史commit：https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
